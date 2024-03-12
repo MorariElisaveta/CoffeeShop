@@ -170,6 +170,20 @@
     <ItemGroup>
         <None Include="packages.config"/>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\RiseCup.BL\RiseCup.BL.csproj">
+        <Project>{61034843-f282-40ef-aaef-0a2885148298}</Project>
+        <Name>RiseCup.BL</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\RiseCup.Database\RiseCup.Database.csproj">
+        <Project>{4f455361-bfc7-47aa-b777-55ef87527e6c}</Project>
+        <Name>RiseCup.Database</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\RiseCup.Domain\RiseCup.Domain.csproj">
+        <Project>{de81ad1b-d616-48bf-b328-e7bc2b68b32b}</Project>
+        <Name>RiseCup.Domain</Name>
+      </ProjectReference>
+    </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
