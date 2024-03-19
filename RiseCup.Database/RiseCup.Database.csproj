@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202403251219127_HelloDasha.cs" />
-    <Compile Include="Migrations\202403251219127_HelloDasha.Designer.cs">
-      <DependentUpon>202403251219127_HelloDasha.cs</DependentUpon>
+    <Compile Include="Migrations\202404151846364_HelloDasha.cs" />
+    <Compile Include="Migrations\202404151846364_HelloDasha.Designer.cs">
+      <DependentUpon>202404151846364_HelloDasha.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,8 +65,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202403251219127_HelloDasha.resx">
-      <DependentUpon>202403251219127_HelloDasha.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404151846364_HelloDasha.resx">
+      <DependentUpon>202404151846364_HelloDasha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

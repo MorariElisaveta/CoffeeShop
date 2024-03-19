@@ -3,9 +3,9 @@ using RiseCup.Domain.Models;
 
 namespace RiseCup.Database
 {
-    public class MyStoreContext : DbContext
+    public class RiseCupContext : DbContext
     {
-        public MyStoreContext() : base("name=DefaultConnection")
+        public RiseCupContext() : base("name=MSSQL")
         {
         }
 

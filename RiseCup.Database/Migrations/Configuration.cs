@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<RiseCup.Database.MyStoreContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RiseCupContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(RiseCup.Database.MyStoreContext context)
+        protected override void Seed(RiseCup.Database.RiseCupContext context)
         {
             //  This method will be called after migrating to the latest version.
 
