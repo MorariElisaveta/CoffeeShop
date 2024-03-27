@@ -40,6 +40,25 @@
                 <li class="nav-item active">
                   <a class="nav-link last_link" href="@Url.Action("Testimonial", "Home")">Testimonial</a>
                 </li>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                  <li class="nav-item active">
+                    <a class="nav-link last_link" href="@Url.Action("Login", "Auth")">Login</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link last_link" href="@Url.Action("Register", "Auth")">Register</a>
+                  </li>
+                }
+                else
+                {
+                  <li class="nav-item active">
+                    <a class="nav-link last_link" href="@Url.Action("Logout", "Auth")">Logout</a>
+                  </li>
+                  if (User.IsInRole("Administrator"))
+                  {
+                    <a class="nav-link last_link" href="@Url.Action("Index", "Orders")">Orders</a>
+                  }
+                }
               </ul>
             </div>
           </div>
