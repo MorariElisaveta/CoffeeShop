@@ -51,13 +51,15 @@
                 }
                 else
                 {
+                  if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                  {
+                    <li class="nav-item active">
+                      <a class="nav-link last_link" href="@Url.Action("Index", "Orders")">Orders</a>
+                    </li>
+                  }
                   <li class="nav-item active">
                     <a class="nav-link last_link" href="@Url.Action("Logout", "Auth")">Logout</a>
                   </li>
-                  if (User.IsInRole("Administrator"))
-                  {
-                    <a class="nav-link last_link" href="@Url.Action("Index", "Orders")">Orders</a>
-                  }
                 }
               </ul>
             </div>
