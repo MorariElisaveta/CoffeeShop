@@ -1,0 +1,34 @@
+﻿@model RiseCup.Domain.Models.Product
+
+@{
+ViewBag.Title = "Delete Product";
+Layout = "../Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Delete Product</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>@Html.DisplayFor(model => model.Name)</dd>
+        <dt>Price</dt>
+        <dd>@Html.DisplayFor(model => model.Price)</dd>
+        <dt>Description</dt>
+        <dd>@Html.DisplayFor(model => model.Description)</dd>
+        <dt>Category</dt>
+        <dd>@Html.DisplayFor(model => model.Category.Name)</dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Cancel", "Index")
+    </div>
+    }
+</div>
+
