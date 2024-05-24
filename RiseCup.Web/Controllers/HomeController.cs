@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using RiseCup.Database;
+using RiseCup.Domain.Models;
 
 namespace RiseCup.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly RiseCupContext _db;
+
+        public HomeController()
+        {
+            _db = new RiseCupContext();
+        }
+        
         public ActionResult Index()
         {
             return View();

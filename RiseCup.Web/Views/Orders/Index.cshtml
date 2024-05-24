@@ -1,32 +1,38 @@
-﻿@model IEnumerable<RiseCup.Domain.Models.Order> 
+﻿@model IEnumerable<RiseCup.Domain.Models.Order>
 
 @{
-ViewBag.Title = "Orders List";
-Layout = "~/Views/Shared/_AdminLayout.cshtml"; // Предполагается, что у вас есть специальный layout для админки
+ViewBag.Title = "Orders";
+Layout = "../Shared/_AdminLayout.cshtml";
 }
 
-<h2>Orders List</h2>
+<h2>Orders</h2>
 
-<table class="table table-hover">
-    <thead>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
-        <th>Order ID</th>
-        <th>Date</th>
-        <th>Customer</th>
-        <th>Total</th>
+        <th>Order Date</th>
+        <th>User</th>
+        <th>Total Amount</th>
         <th>Status</th>
+        <th>Actions</th>
     </tr>
-    </thead>
-    <tbody>
-    @foreach (var order in Model)
-    {
+
+    @foreach (var item in Model) {
     <tr>
-        <td>@order.OrderId</td>
-        <td>@order.OrderDate.ToString("dd MMM yyyy")</td>
-        <td>@order.User.Username</td> <!-- Пример, убедитесь, что структура модели подходит -->
-        <td>@order.TotalAmount.ToString("C")</td>
-        <td>@order.Status</td>
+        <td>@Html.DisplayFor(modelItem => item.OrderDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.User.Username)</td>
+        <td>@Html.DisplayFor(modelItem => item.TotalAmount)</td>
+        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+        <td>
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+            }
+        </td>
     </tr>
     }
-    </tbody>
+
 </table>
