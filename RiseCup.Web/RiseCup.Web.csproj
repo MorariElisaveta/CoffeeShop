@@ -123,13 +123,23 @@
         <Compile Include="App_Start\BundleConfig.cs" />
         <Compile Include="App_Start\FilterConfig.cs" />
         <Compile Include="App_Start\RouteConfig.cs" />
+        <Compile Include="Attributes\AuthorizeAttribute.cs" />
         <Compile Include="Controllers\AuthController.cs" />
         <Compile Include="Controllers\HomeController.cs" />
         <Compile Include="Controllers\OrdersController.cs" />
+        <Compile Include="Controllers\ProductsController.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Content Include="Views\Orders\Create.cshtml" />
+        <Content Include="Views\Orders\Delete.cshtml" />
+        <Content Include="Views\Orders\Edit.cshtml" />
+        <Content Include="Views\Products\Create.cshtml" />
+        <Content Include="Views\Products\Delete.cshtml" />
+        <Content Include="Views\Products\Edit.cshtml" />
+        <Content Include="Views\Products\Index.cshtml" />
+        <Content Include="Views\Shared\_AuthLayout.cshtml" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\css\bootstrap.css" />
